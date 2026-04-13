@@ -1,5 +1,4 @@
 from datetime import datetime
-from typing import Optional
 from pydantic import (
     BaseModel, Field, ValidationError, model_validator)
 from enum import Enum
