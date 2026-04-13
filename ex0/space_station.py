@@ -43,6 +43,7 @@ def main() -> None:
 
     print("Space Station Data Validation")
     print("========================================")
+    print("Valid station created:")
     show_station_data(station)
     print("========================================")
     print("Expected validation error:")
