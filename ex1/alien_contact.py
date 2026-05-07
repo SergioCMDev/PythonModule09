@@ -36,7 +36,9 @@ class AlienContact(BaseModel):
             raise ValueError("Telepathic contact requires at least 3 "
                              "witnesses")
 
-        if (self.signal_strength > 7.0 and len(self.message_received) < 1):
+        if (self.signal_strength > 7.0 and (
+                self.message_received is None
+                or len(self.message_received) < 1)):
             raise ValueError("strong signal_strength requires to "
                              "include a message")
 
@@ -83,10 +85,10 @@ def main() -> None:
             contact_id="AC1",
             timestamp=datetime.now(),
             location="here",
-            contact_type=ContactType.physical,
+            contact_type=ContactType.telephatic,
             signal_strength=2,
             duration_minutes=32,
-            witness_count=23,
+            witness_count=2,
             message_received="F",
             is_verified=True
         )
